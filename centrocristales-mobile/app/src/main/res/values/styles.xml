@@ -6,12 +6,10 @@
         <item name="colorPrimary">@color/colorPrimary</item>
         <item name="colorPrimaryDark">@color/colorPrimaryDark</item>
         <item name="colorAccent">@color/colorAccent</item>
-        <item name="android:windowBackground">@drawable/background_image</item>
         <item name="android:typeface">monospace</item>
     </style>
 
     <style name="HomeTheme" parent="AppTheme">
-        <item name="android:windowBackground">@drawable/background_image_home</item>
         <item name="windowNoTitle">true</item>
     </style>
 
