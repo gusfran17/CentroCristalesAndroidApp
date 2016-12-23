@@ -13,7 +13,7 @@
     <string name="label_seleccionar_imagen">Seleccionar Imagen</string>
     <string name="label_enviar_pedido">Enviar Pedido</string>
     <string name="text_titulo_pedido_presupuesto">PEDIDO DE PRESUPUESTO</string>
-    <string name="label_copete_consulta_ot">Ingrese el número de Orden de Trabajo y el Dominio para consultar el estado del trabajo</string>
+    <string name="label_copete_consulta_ot">Ingrese los siguientes datos</string>
     <string name="label_copete_pedido_presupuesto">Seleccione una imagen, un mensaje e indique el mail donde desea recibir la respuesta</string>
     <string name="label_seleccione_imagen"><![CDATA[<<seleccione una imagen>>]]></string>
     <string name="ok_ws_envio_pedido_presupuesto">El envío se realizó con éxito. A la brevedad nos pondremos en contacto con usted.</string>
