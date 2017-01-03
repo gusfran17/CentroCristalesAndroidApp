@@ -15,6 +15,9 @@
         android:paddingRight="@dimen/activity_horizontal_margin"
         android:paddingTop="@dimen/activity_vertical_margin"
         android:background="@drawable/background_image"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true"
         android:layout_above="@+id/bannerPresupuesto">
 
         <TextView
@@ -22,6 +25,7 @@
             android:layout_height="wrap_content"
             android:textSize="@dimen/activity_title_textsize"
             android:textAppearance="?android:attr/textAppearanceLarge"
+            android:textAlignment="center"
             android:text="@string/label_pedido_presupuesto"
             android:id="@+id/textView" />
 
@@ -35,17 +39,6 @@
             <!--android:alpha="0"-->
             <!--&gt;-->
 
-
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:textAppearance="?android:attr/textAppearanceLarge"
-                android:text="@string/label_seleccione_imagen"
-                android:id="@+id/txtSeleccioneImagen"
-                android:layout_centerVertical="true"
-                android:layout_centerHorizontal="true"
-                android:textIsSelectable="false"/>
-
             <ImageView
                 android:id="@+id/imgView"
                 android:layout_width="match_parent"
@@ -53,24 +46,66 @@
                 android:onClick="onLoadPictureClick"
                 android:clickable="true"
                 android:padding="1dp"
+                android:backgroundTint="@color/colorBlack"
                 android:cropToPadding="true"
-                android:scaleType="centerCrop"
+                android:adjustViewBounds="true"
+                android:scaleType="fitXY"
                 android:background="@drawable/image_border"
-                ></ImageView>
+                android:src="@drawable/load_image"
+                android:contentDescription="@string/carga_default_image_ctntDesc" />
 
 
         </RelativeLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="45dp"
+            android:paddingLeft="@dimen/side_padding_margin_buttons"
+            android:paddingTop="@dimen/topbot_padding_margin_buttons"
+            android:paddingRight="@dimen/side_padding_margin_buttons"
+            android:paddingBottom="@dimen/topbot_padding_margin_buttons"
+            android:orientation="horizontal">
+
+            <Button
+                android:text="@string/presupuesto_libreria_btn"
+                android:textColor="@color/white"
+                android:backgroundTint="@color/colorGaleria"
+                android:textStyle="bold"
+                android:layout_width="@dimen/ancho_camara_button"
+                android:layout_height="wrap_content"
+                android:layout_marginRight="@dimen/side_padding_margin_buttons"
+                android:textSize="10dp"
+                android:onClick="onLoadPictureClick"
+                android:layout_weight="1.0"
+                android:id="@+id/libreria_btn" />
+
+            <Button
+
+                android:text="@string/presupuesto_camara_btn"
+                android:backgroundTint="@color/colorCamara"
+                android:textStyle="bold"
+                android:textColor="@color/white"
+                android:layout_width="@dimen/ancho_camara_button"
+                android:layout_height="wrap_content"
+                android:layout_marginRight="@dimen/side_padding_margin_buttons"
+                android:textSize="10dp"
+                android:id="@+id/camara_btn"
+                android:onClick="onLoadCameraClick"
+                android:layout_weight="1.0"
+                android:layout_toRightOf="@id/libreria_btn"/>
+
+        </LinearLayout>
 
         <EditText
             android:layout_width="match_parent"
             android:layout_height="0dp"
             android:inputType="textMultiLine"
             android:id="@+id/txtMensajePedidoPresupuesto"
-            android:layout_gravity="center_horizontal"
+            android:layout_gravity="start"
             android:layout_weight="6"
             android:textSize="@dimen/edittext_textsize"
             android:hint="@string/hint_mensaje_pedido_presupuesto"
-            android:gravity="top|left" />
+            android:gravity="center_vertical|center_horizontal" />
 
 
         <EditText
@@ -80,6 +115,7 @@
             android:inputType="textEmailAddress"
             android:id="@+id/txtEmailSolicitante"
             android:layout_gravity="center_horizontal"
+            android:gravity="center"
             android:hint="@string/hint_email_solicitante"/>
 
         <Button
@@ -87,37 +123,43 @@
             android:layout_width="match_parent"
             android:layout_height="@dimen/button_height"
             android:layout_weight="0"
+            android:backgroundTint="@color/colorAccent"
+            android:textColor="@color/white"
             android:textSize="@dimen/button_textsize"
             android:text="@string/label_enviar_pedido"
+            android:textStyle="bold"
             android:layout_gravity="center"
             android:onClick="onEnviarPedidoClick">
         </Button>
 
-        <RelativeLayout
-            android:id="@+id/progressBarPedidoPresupuesto"
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:visibility="gone"
-            android:clickable="true">
-
-            <ProgressBar
-                style="?android:attr/progressBarStyleLarge"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_centerHorizontal="true"
-                android:layout_centerVertical="true"
-                android:indeterminateDrawable="@drawable/progress" >
-            </ProgressBar>
-
-        </RelativeLayout>
-
     </LinearLayout>
+
+    <RelativeLayout
+        android:id="@+id/progressBarPedidoPresupuesto"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:visibility="gone"
+        android:clickable="true">
+
+        <ProgressBar
+            style="?android:attr/progressBarStyleLarge"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerHorizontal="true"
+            android:layout_centerVertical="true"
+            android:indeterminateDrawable="@drawable/progress" >
+        </ProgressBar>
+
+    </RelativeLayout>
 
     <ImageView
         android:layout_width="fill_parent"
         android:layout_height="70dp"
-        app:srcCompat="@android:drawable/arrow_down_float"
+        android:scaleType="fitXY"
+        android:onClick="showWebsite"
         android:layout_alignParentBottom="true"
-        android:id="@id/bannerPresupuesto" />
+        android:id="@id/bannerPresupuesto"
+        android:visibility="gone"
+        android:contentDescription="@string/presupuesto_banner_ctntDesc" />
 
 </RelativeLayout>

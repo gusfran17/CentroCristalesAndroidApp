@@ -1,16 +1,22 @@
 package ar.com.lacomarcasistemas.centrocristalesmobile;
 
-import android.app.AlertDialog;
 import android.content.DialogInterface;
 import android.content.Intent;
+import android.graphics.Bitmap;
 import android.net.Uri;
 import android.os.Bundle;
+import android.os.Environment;
+import android.provider.MediaStore;
+import android.util.Log;
 import android.view.View;
 import android.widget.EditText;
 import android.widget.ImageView;
 import android.widget.RelativeLayout;
-import android.widget.TextView;
 import android.widget.Toast;
+import android.support.v4.content.ContextCompat;
+import android.support.v4.app.ActivityCompat;
+import android.Manifest;
+import android.content.pm.PackageManager;
 
 import com.octo.android.robospice.exception.NetworkException;
 import com.octo.android.robospice.persistence.DurationInMillis;
@@ -18,20 +24,29 @@ import com.octo.android.robospice.persistence.exception.SpiceException;
 import com.octo.android.robospice.request.listener.RequestListener;
 
 import java.io.File;
+import java.io.IOException;
+import java.text.SimpleDateFormat;
+import java.util.Date;
 
 import ar.com.lacomarcasistemas.centrocristalesmobile.helper.Io;
+import ar.com.lacomarcasistemas.centrocristalesmobile.model.Banner;
 import ar.com.lacomarcasistemas.centrocristalesmobile.model.PedidoPresupuesto;
+import ar.com.lacomarcasistemas.centrocristalesmobile.network.BannerRequest;
 import ar.com.lacomarcasistemas.centrocristalesmobile.network.PedidoPresupuestoRequest;
 import retrofit.mime.TypedFile;
 
 public class PedidoPresupuestoActivity extends BaseSpiceActivity  {
-
-    private static int RESULT_LOAD_IMAGE = 1;
+    private static final String TAG = "PresupuestoActivity";
+    private static final int RESULT_LOAD_IMAGE = 1;
+    private static final int RESULT_LOAD_CAMERA = 2;
+    private static final int RESULT_PERMISSIONS = 3;
+    private static final int MEDIA_TYPE_IMAGE = 10;
 //    private PostGenericRequest postGenericRequest;
     private PedidoPresupuestoRequest pedidoPresupuestoRequest;
+    private BannerRequest bannerRequest;
     private Uri selectedImageUri;
     private RelativeLayout bar;
-    private TextView txtSeleccioneImage;
+    private Banner banner;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -39,10 +54,49 @@ public class PedidoPresupuestoActivity extends BaseSpiceActivity  {
         setContentView(R.layout.activity_pedido_presupuesto);
 
         bar = (RelativeLayout) this.findViewById(R.id.progressBarPedidoPresupuesto);
-        txtSeleccioneImage = (TextView) this.findViewById(R.id.txtSeleccioneImagen);
+
+        ImageView imageView = (ImageView) findViewById(R.id.bannerPresupuesto);
+        banner = new Banner(getString(R.string.presupuesto_banner_id), imageView, this);
+        banner.setImage();
+
+        bannerRequest = new BannerRequest(getString(R.string.presupuesto_banner_id));
+        getBannerWSManager().execute(bannerRequest, "bannerRequestLink", DurationInMillis.ALWAYS_EXPIRED, new PedidoPresupuestoActivity.BannerRequestListener());
+    }
+
+    public void onLoadCameraClick(View view) {
+        int permissionCheck = ContextCompat.checkSelfPermission(this, Manifest.permission.WRITE_EXTERNAL_STORAGE);
+
+        if (permissionCheck != PackageManager.PERMISSION_GRANTED) {
+            ActivityCompat.requestPermissions(this, new String[]{Manifest.permission.WRITE_EXTERNAL_STORAGE}, RESULT_PERMISSIONS);
+        } else {
+            loadCamera();
+        }
     }
 
     public void onLoadPictureClick(View view) {
+        int permissionCheck = ContextCompat.checkSelfPermission(this, Manifest.permission.WRITE_EXTERNAL_STORAGE);
+
+        if (permissionCheck != PackageManager.PERMISSION_GRANTED) {
+            ActivityCompat.requestPermissions(this, new String[]{Manifest.permission.WRITE_EXTERNAL_STORAGE}, 1);
+        } else {
+            loadPicture();
+        }
+    }
+
+    public void loadCamera(){
+        selectedImageUri = getOutputMediaUri(MEDIA_TYPE_IMAGE);
+        if (selectedImageUri == null){
+            Toast.makeText(this,
+                    R.string.validation_mensaje_error_memoria_externa,
+                    Toast.LENGTH_LONG).show();
+        }
+        Io.hideKeyboard(PedidoPresupuestoActivity.this);
+        Intent i = new Intent(MediaStore.ACTION_IMAGE_CAPTURE);
+        i.putExtra(MediaStore.EXTRA_OUTPUT, selectedImageUri);
+        startActivityForResult(i, RESULT_LOAD_CAMERA);
+    }
+
+    public void loadPicture(){
         Io.hideKeyboard(PedidoPresupuestoActivity.this);
         Intent i = new Intent(
                 Intent.ACTION_PICK, android.provider.MediaStore.Images.Media.EXTERNAL_CONTENT_URI
@@ -53,25 +107,81 @@ public class PedidoPresupuestoActivity extends BaseSpiceActivity  {
 
     @Override
     protected void onActivityResult(int requestCode, int resultCode, Intent data) {
+
         try {
             super.onActivityResult(requestCode, resultCode, data);
 
-            if (requestCode == RESULT_LOAD_IMAGE && resultCode == RESULT_OK && null != data) {
-
-                txtSeleccioneImage.setVisibility(View.INVISIBLE);
-
-                selectedImageUri = data.getData();
-
+            if (resultCode == RESULT_OK) {
+                if (requestCode == RESULT_LOAD_IMAGE && null != data) {
+                    selectedImageUri = data.getData();
+                }
                 ImageView imageView = (ImageView) findViewById(R.id.imgView);
-                imageView.setImageBitmap(Io.getBitmap(getBaseContext(), selectedImageUri));
-
-            }
-            else
-            {
-                txtSeleccioneImage.setVisibility(View.VISIBLE);
+                imageView.setScaleType(ImageView.ScaleType.FIT_CENTER);
+                Bitmap bitmap = Io.getBitmap(getBaseContext(), selectedImageUri);
+                imageView.setImageBitmap(bitmap);
             }
         } catch (Exception e) {
             Toast.makeText(PedidoPresupuestoActivity.this, getString(R.string.error_seleccionando_imagen), Toast.LENGTH_SHORT).show();
+        }
+
+    }
+
+    @Override
+    public void onRequestPermissionsResult(int requestCode, String permissions[], int[] grantResults) {
+        switch (requestCode) {
+            case RESULT_PERMISSIONS : {
+                // If request is cancelled, the result arrays are empty.
+                if (grantResults.length > 0
+                        && grantResults[0] == PackageManager.PERMISSION_GRANTED) {
+                    // permission granted and now can proceed
+                    loadPicture(); //a sample method called
+
+                } else {
+
+                    // permission denied
+                    Toast.makeText(this, R.string.validation_error_permisos, Toast.LENGTH_SHORT).show();
+                }
+                return;
+            }
+            // add other cases for more permissions
+        }
+    }
+
+    private Uri getOutputMediaUri(int mediaType) {
+        if (isExternalStorageAvailable()){
+            //Get external storage directory
+            File mediaStorageDir = getExternalFilesDir(Environment.DIRECTORY_PICTURES);
+
+            //Create unique file name
+            String fileName = "";
+            String fileType = "";
+            String timeStamp = new SimpleDateFormat("yyyyMMdd_HHmmss").format(new Date());
+            if (mediaType == MEDIA_TYPE_IMAGE){
+                fileName = "IMG" + timeStamp;
+                fileType = ".jpg";
+            }
+            //Create file and return it
+            try {
+                File mediaFile = File.createTempFile(fileName, fileType, mediaStorageDir);
+                Log.i(TAG, "File: " + Uri.fromFile(mediaFile));
+
+                return Uri.fromFile(mediaFile);
+            }
+            catch (IOException e) {
+                Log.e(TAG, "Error al crear el archivo: " +
+                        mediaStorageDir.getAbsolutePath() + fileName + fileType);
+            }
+        }
+        return null;
+    }
+
+    private boolean isExternalStorageAvailable(){
+        String state = Environment.getExternalStorageState();
+        if (Environment.MEDIA_MOUNTED.equals(state)) {
+            return true;
+        }
+        else {
+            return false;
         }
     }
 
@@ -116,7 +226,7 @@ public class PedidoPresupuestoActivity extends BaseSpiceActivity  {
         EditText txtMensaje = ((EditText) findViewById(R.id.txtMensajePedidoPresupuesto));
 
         if(null ==  selectedImageUri){
-            Toast.makeText(PedidoPresupuestoActivity.this, "No hay imagen seleccionada para enviar", Toast.LENGTH_LONG).show();
+            Toast.makeText(PedidoPresupuestoActivity.this, R.string.validation_no_hay_imagen_seleccionada, Toast.LENGTH_LONG).show();
             validate = false;
         }
 
@@ -134,6 +244,12 @@ public class PedidoPresupuestoActivity extends BaseSpiceActivity  {
         return validate;
     }
 
+    public void showWebsite(View view) {
+        String link = banner.getLink();
+        if (link == null) link = getString(R.string.default_banner_website);
+        Intent browserIntent = new Intent(Intent.ACTION_VIEW, Uri.parse(link));
+        startActivity(browserIntent);
+    }
 
     // ============================================================================================
     // INNER CLASSES
@@ -178,4 +294,16 @@ public class PedidoPresupuestoActivity extends BaseSpiceActivity  {
         }
     }
 
+    public class BannerRequestListener implements com.octo.android.robospice.request.listener.RequestListener<Banner> {
+        @Override
+        public void onRequestFailure(SpiceException spiceException) {
+            spiceException.printStackTrace();
+            banner.link = getString(R.string.default_banner_website);
+        }
+
+        @Override
+        public void onRequestSuccess(Banner newBanner) {
+            banner.link = newBanner.link;
+        }
+    }
 }

@@ -1,20 +1,25 @@
 <resources>
     <string name="app_name">Centro Cristales Mobile</string>
+    <string name="main_banner_id">"1"</string>
+    <string name="status_banner_id">"2"</string>
+    <string name="presupuesto_banner_id">"3"</string>
     <string name="hint_orden_trabajo">Orden de Trabajo:</string>
     <string name="hint_dominio">Dominio:</string>
     <string name="label_Consultar">Consultar</string>
     <string name="estado_orden_trabajo_format">El estado de su Orden de Trabajo es: %s</string>
     <string name="label_consulta_ot">Estado de su Vehículo</string>
-    <string name="label_pedido_presupuesto">Cotización / Presupuesto</string>
+    <string name="label_pedido_presupuesto">Cotización</string>
     <string name="hint_mensaje_pedido_presupuesto">Escriba aquí su mensaje</string>
-    <string name="hint_email_solicitante">Email para recibir la respuesta</string>
+    <string name="hint_email_solicitante">Email donde responder</string>
     <string name="validation_email_solicitante_valido">Debe ingresar un email válido para recibir la respuesta.</string>
     <string name="validation_mensaje_pedido_presupuesto_requerido">Ingrese un mensaje con el detalle del presupuesto solicitado</string>
+    <string name="validation_mensaje_error_memoria_externa">"Hubo un problema al acceder a la memoria externa de su equipo"</string>
+    <string name="validation_error_permisos">Se ha negado el permiso de lectura de memoria externa</string>
+    <string name="validation_no_hay_imagen_seleccionada">No hay imagen seleccionada para enviar</string>
     <string name="label_seleccionar_imagen">Seleccionar Imagen</string>
     <string name="label_enviar_pedido">Enviar Pedido</string>
     <string name="text_titulo_pedido_presupuesto">PEDIDO DE PRESUPUESTO</string>
-    <string name="label_copete_consulta_ot">Ingrese los siguientes datos</string>
-    <string name="label_copete_pedido_presupuesto">Seleccione una imagen, un mensaje e indique el mail donde desea recibir la respuesta</string>
+    <string name="label_copete_consulta_ot">Ingrese los datos del vehículo</string>    <string name="label_copete_pedido_presupuesto">Seleccione una imagen, un mensaje e indique el mail donde desea recibir la respuesta</string>
     <string name="label_seleccione_imagen"><![CDATA[<<seleccione una imagen>>]]></string>
     <string name="ok_ws_envio_pedido_presupuesto">El envío se realizó con éxito. A la brevedad nos pondremos en contacto con usted.</string>
     <string name="error_inesperado">Ocurrió un error inesperado. Por favor reintente más tarde.</string>
@@ -29,4 +34,11 @@
     <string name="layout_weight_imagen_pedido_presupuesto">10</string>
     <string name="label_copete_home">Bienvenido a la App de\nCentro Cristales</string>
     <string name="error_conexion_servidor">No se pudo establecer la comunicación con el servidor. Por favor intente más tarde. Si el error persiste, por favor actualice la versión de la aplicación.</string>
+    <string name="status_banner_ctntDesc">Banner</string>
+    <string name="presupuesto_banner_ctntDesc">Banner</string>
+    <string name="main_banner_ctntDesc">Banner</string>
+    <string name="carga_default_image_ctntDesc">Carga de fotografía del vehículo</string>
+    <string name="presupuesto_camara_btn">Cámara</string>
+    <string name="presupuesto_libreria_btn">Galeria de fotos</string>
+    <string name="default_banner_website">http://centrocristales.com</string>
 </resources>

@@ -1,8 +1,11 @@
 package ar.com.lacomarcasistemas.centrocristalesmobile;
 
+import android.content.Intent;
+import android.net.Uri;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.EditText;
+import android.widget.ImageView;
 import android.widget.RelativeLayout;
 import android.widget.TextView;
 import android.widget.Toast;
@@ -13,14 +16,18 @@ import com.octo.android.robospice.persistence.exception.SpiceException;
 import com.octo.android.robospice.request.listener.RequestListener;
 
 import ar.com.lacomarcasistemas.centrocristalesmobile.helper.Io;
+import ar.com.lacomarcasistemas.centrocristalesmobile.model.Banner;
 import ar.com.lacomarcasistemas.centrocristalesmobile.model.EstadoOrdenTrabajo;
+import ar.com.lacomarcasistemas.centrocristalesmobile.network.BannerRequest;
 import ar.com.lacomarcasistemas.centrocristalesmobile.network.GetEstadoOrdenTrabajoRequest;
 
 public class ConsultaOtActivity extends BaseSpiceActivity {
 
     private TextView mTextView;
     private GetEstadoOrdenTrabajoRequest estadoOrdenTrabajoRequest;
+    private BannerRequest bannerRequest;
     private RelativeLayout bar;
+    private Banner banner;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -29,6 +36,13 @@ public class ConsultaOtActivity extends BaseSpiceActivity {
 
         mTextView = (TextView) findViewById(R.id.txtStatus);
         bar = (RelativeLayout) this.findViewById(R.id.progressBarConsultaOt);
+
+        ImageView imageView = (ImageView) findViewById(R.id.bannerStatus);
+        banner = new Banner(getString(R.string.status_banner_id), imageView, this);
+        banner.setImage();
+
+        bannerRequest = new BannerRequest(getString(R.string.presupuesto_banner_id));
+        getBannerWSManager().execute(bannerRequest, "bannerStatusLink", DurationInMillis.ALWAYS_EXPIRED, new ConsultaOtActivity.BannerRequestListener());
     }
 
     @Override
@@ -105,6 +119,13 @@ public class ConsultaOtActivity extends BaseSpiceActivity {
         return validate;
     }
 
+    public void showWebsite(View view) {
+        String link = banner.getLink();
+        if (link == null) link = getString(R.string.default_banner_website);
+        Intent browserIntent = new Intent(Intent.ACTION_VIEW, Uri.parse(link));
+        startActivity(browserIntent);
+    }
+
 
     // ============================================================================================
     // INNER CLASSES
@@ -137,6 +158,19 @@ public class ConsultaOtActivity extends BaseSpiceActivity {
             } catch (Exception e) {
                 Toast.makeText(ConsultaOtActivity.this, getString(R.string.error_inesperado), Toast.LENGTH_SHORT).show();
             }
+        }
+    }
+
+    public class BannerRequestListener implements com.octo.android.robospice.request.listener.RequestListener<Banner> {
+        @Override
+        public void onRequestFailure(SpiceException spiceException) {
+            spiceException.printStackTrace();
+            banner.link = getString(R.string.default_banner_website);
+        }
+
+        @Override
+        public void onRequestSuccess(Banner newBanner) {
+            banner.link = newBanner.link;
         }
     }
 }

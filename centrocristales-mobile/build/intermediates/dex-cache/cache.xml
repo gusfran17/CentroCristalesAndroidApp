@@ -3,138 +3,147 @@
 
     <item
         is-multidex="true"
-        jar="/Users/tavoArgento/Desktop/Centro Cristales /AndroidApp/centrocristales-mobile/app/build/intermediates/exploded-aar/com.android.support/appcompat-v7/23.4.0/jars/classes.jar"
-        jumboMode="true"
-        optimize="true"
-        revision="23.0.3"
-        sha1="548f06de403a9409f00554b3ee12a9fdea0e236c">
-        <dex dex="/Users/tavoArgento/Desktop/Centro Cristales /AndroidApp/centrocristales-mobile/app/build/intermediates/transforms/dex/debug/folders/1000/10/com.android.support-appcompat-v7-23.4.0_7df7b56e100ef1d8b1f2f439e806a2821705da47/classes.dex" />
-    </item>
-    <item
-        is-multidex="true"
-        jar="/Users/tavoArgento/.gradle/caches/modules-2/files-2.1/com.squareup.retrofit/retrofit/1.3.0/9c54af761b67b60a1be7a7a8e96c6235f136456b/retrofit-1.3.0.jar"
-        jumboMode="true"
-        optimize="true"
-        revision="23.0.3"
-        sha1="9c54af761b67b60a1be7a7a8e96c6235f136456b">
-        <dex dex="/Users/tavoArgento/Desktop/Centro Cristales /AndroidApp/centrocristales-mobile/app/build/intermediates/transforms/dex/debug/folders/1000/10/retrofit-1.3.0_cf223f0f5e7c64b9dac9f38c034ec796ff409612/classes.dex" />
-    </item>
-    <item
-        is-multidex="true"
-        jar="/Users/tavoArgento/Desktop/Centro Cristales /AndroidApp/centrocristales-mobile/app/build/intermediates/exploded-aar/com.android.support/support-vector-drawable/23.4.0/jars/classes.jar"
+        jar="C:\CentroCristalesAndroidApp\centrocristales-mobile\app\build\intermediates\exploded-aar\com.android.support\support-vector-drawable\23.4.0\jars\classes.jar"
         jumboMode="true"
         optimize="true"
         revision="23.0.3"
         sha1="c2c594cace5d83a3227b2b6e658ecbfd586d3ed9">
-        <dex dex="/Users/tavoArgento/Desktop/Centro Cristales /AndroidApp/centrocristales-mobile/app/build/intermediates/transforms/dex/debug/folders/1000/10/com.android.support-support-vector-drawable-23.4.0_f106bda85792a141229e7658c0f12aea326dd3ac/classes.dex" />
+        <dex dex="C:\CentroCristalesAndroidApp\centrocristales-mobile\app\build\intermediates\transforms\dex\debug\folders\1000\10\com.android.support-support-vector-drawable-23.4.0_3968c9c08bb093cddf6ccad4478988c92cb4bb61\classes.dex" />
     </item>
     <item
         is-multidex="true"
-        jar="/Users/tavoArgento/.gradle/caches/modules-2/files-2.1/com.octo.android.robospice/robospice-cache/1.4.11/dbf991438c3abc4fc5003d085c281df4318142c7/robospice-cache-1.4.11.jar"
-        jumboMode="true"
-        optimize="true"
-        revision="23.0.3"
-        sha1="dbf991438c3abc4fc5003d085c281df4318142c7">
-        <dex dex="/Users/tavoArgento/Desktop/Centro Cristales /AndroidApp/centrocristales-mobile/app/build/intermediates/transforms/dex/debug/folders/1000/10/robospice-cache-1.4.11_9d0b7472a6ab6fbcc1677ceef993bd86c65e37d2/classes.dex" />
-    </item>
-    <item
-        is-multidex="true"
-        jar="/Users/tavoArgento/.gradle/caches/modules-2/files-2.1/com.octo.android.robospice/robospice-retrofit/1.4.11/803430962c6060571288fcb1d822f3f7c4de17f2/robospice-retrofit-1.4.11.jar"
-        jumboMode="true"
-        optimize="true"
-        revision="23.0.3"
-        sha1="803430962c6060571288fcb1d822f3f7c4de17f2">
-        <dex dex="/Users/tavoArgento/Desktop/Centro Cristales /AndroidApp/centrocristales-mobile/app/build/intermediates/transforms/dex/debug/folders/1000/10/robospice-retrofit-1.4.11_573b5684ea0c7fb38bf9b87dc548da0664dbe0ed/classes.dex" />
-    </item>
-    <item
-        is-multidex="true"
-        jar="/Users/tavoArgento/Desktop/Centro Cristales /AndroidApp/centrocristales-mobile/app/build/intermediates/exploded-aar/com.android.support/support-v4/23.4.0/jars/libs/internal_impl-23.4.0.jar"
-        jumboMode="true"
-        optimize="true"
-        revision="23.0.3"
-        sha1="ea3c07504d2c8f4b13aa17c45c1b68ed9c1c3674">
-        <dex dex="/Users/tavoArgento/Desktop/Centro Cristales /AndroidApp/centrocristales-mobile/app/build/intermediates/transforms/dex/debug/folders/1000/10/internal_impl-23.4.0_28eba19860a6bb621d92bcd6d6d062b631f37f63/classes.dex" />
-    </item>
-    <item
-        is-multidex="true"
-        jar="/Users/tavoArgento/.gradle/caches/modules-2/files-2.1/org.apache.commons/commons-lang3/3.2.1/66f13681add50ca9e4546ffabafaaac7645db3cf/commons-lang3-3.2.1.jar"
+        jar="C:\Users\Admin\.gradle\caches\modules-2\files-2.1\org.apache.commons\commons-lang3\3.2.1\66f13681add50ca9e4546ffabafaaac7645db3cf\commons-lang3-3.2.1.jar"
         jumboMode="true"
         optimize="true"
         revision="23.0.3"
         sha1="66f13681add50ca9e4546ffabafaaac7645db3cf">
-        <dex dex="/Users/tavoArgento/Desktop/Centro Cristales /AndroidApp/centrocristales-mobile/app/build/intermediates/transforms/dex/debug/folders/1000/10/commons-lang3-3.2.1_055091deda18b1fbfcd1788dfce68bf8dcf6c0ab/classes.dex" />
+        <dex dex="C:\CentroCristalesAndroidApp\centrocristales-mobile\app\build\intermediates\transforms\dex\debug\folders\1000\10\commons-lang3-3.2.1_b8f9e7989f96c4ffe68d52511df4258fb434ac14\classes.dex" />
     </item>
     <item
         is-multidex="true"
-        jar="/Users/tavoArgento/Desktop/Centro Cristales /AndroidApp/centrocristales-mobile/app/build/intermediates/exploded-aar/com.android.support/support-v4/23.4.0/jars/classes.jar"
-        jumboMode="true"
-        optimize="true"
-        revision="23.0.3"
-        sha1="67bd36ee9340ec7c254108936ad16b24bed160cc">
-        <dex dex="/Users/tavoArgento/Desktop/Centro Cristales /AndroidApp/centrocristales-mobile/app/build/intermediates/transforms/dex/debug/folders/1000/10/com.android.support-support-v4-23.4.0_9f5ce33733784fadf37fdee439d910ea5230740e/classes.dex" />
-    </item>
-    <item
-        is-multidex="true"
-        jar="/Users/tavoArgento/Desktop/Centro Cristales /AndroidApp/centrocristales-mobile/app/build/intermediates/incremental-classes/debug/instant-run-bootstrap.jar"
-        jumboMode="true"
-        optimize="true"
-        revision="23.0.3"
-        sha1="b004785880666a95f5ab0994d7c2bfbfee58ee79">
-        <dex dex="/Users/tavoArgento/Desktop/Centro Cristales /AndroidApp/centrocristales-mobile/app/build/intermediates/transforms/dex/debug/folders/1000/10/instant-run-bootstrap_64127dc4256a18a9cad177d912b4e1612f204e37/classes.dex" />
-    </item>
-    <item
-        is-multidex="true"
-        jar="/Applications/Android Studio.app/Contents/gradle/m2repository/com/google/code/gson/gson/2.2.4/gson-2.2.4.jar"
-        jumboMode="true"
-        optimize="true"
-        revision="23.0.3"
-        sha1="a60a5e993c98c864010053cb901b7eab25306568">
-        <dex dex="/Users/tavoArgento/Desktop/Centro Cristales /AndroidApp/centrocristales-mobile/app/build/intermediates/transforms/dex/debug/folders/1000/10/gson-2.2.4_d0ce76b63ce905fbab3c5d385c8e1b8692010f19/classes.dex" />
-    </item>
-    <item
-        is-multidex="true"
-        jar="/Users/tavoArgento/Desktop/Centro Cristales /AndroidApp/centrocristales-mobile/app/build/intermediates/exploded-aar/com.android.support/animated-vector-drawable/23.4.0/jars/classes.jar"
-        jumboMode="true"
-        optimize="true"
-        revision="23.0.3"
-        sha1="de4db3785756bfb0915a9f59a9b3f2fea7407be4">
-        <dex dex="/Users/tavoArgento/Desktop/Centro Cristales /AndroidApp/centrocristales-mobile/app/build/intermediates/transforms/dex/debug/folders/1000/10/com.android.support-animated-vector-drawable-23.4.0_d3a493f2092209b27dbdb467c83521ebee0c0e36/classes.dex" />
-    </item>
-    <item
-        is-multidex="true"
-        jar="/Users/tavoArgento/.gradle/caches/modules-2/files-2.1/org.apache.commons/commons-io/1.3.2/b6dde38349ba9bb5e6ea6320531eae969985dae5/commons-io-1.3.2.jar"
+        jar="C:\Users\Admin\.gradle\caches\modules-2\files-2.1\org.apache.commons\commons-io\1.3.2\b6dde38349ba9bb5e6ea6320531eae969985dae5\commons-io-1.3.2.jar"
         jumboMode="true"
         optimize="true"
         revision="23.0.3"
         sha1="b6dde38349ba9bb5e6ea6320531eae969985dae5">
-        <dex dex="/Users/tavoArgento/Desktop/Centro Cristales /AndroidApp/centrocristales-mobile/app/build/intermediates/transforms/dex/debug/folders/1000/10/commons-io-1.3.2_ffbccc6d8273ce1d4d12441ec96e5d451f398101/classes.dex" />
+        <dex dex="C:\CentroCristalesAndroidApp\centrocristales-mobile\app\build\intermediates\transforms\dex\debug\folders\1000\10\commons-io-1.3.2_65be764c7d45f734cb31d11de6b8117d845e8fcd\classes.dex" />
     </item>
     <item
         is-multidex="true"
-        jar="/Users/tavoArgento/Desktop/Centro Cristales /AndroidApp/centrocristales-mobile/app/build/intermediates/incremental-runtime-classes/debug/instant-run.jar"
+        jar="C:\CentroCristalesAndroidApp\centrocristales-mobile\app\build\intermediates\incremental-runtime-classes\debug\instant-run.jar"
         jumboMode="true"
         optimize="true"
         revision="23.0.3"
-        sha1="ba970211407064c4fec3c9fda21115f04523933f">
-        <dex dex="/Users/tavoArgento/Desktop/Centro Cristales /AndroidApp/centrocristales-mobile/app/build/intermediates/transforms/dex/debug/folders/1000/10/instant-run_bc875525d941148d0e7837863398f9f164717924/classes.dex" />
+        sha1="d8f35b3e5e26dc7a37a450e13074e5a47da01706">
+        <dex dex="C:\CentroCristalesAndroidApp\centrocristales-mobile\app\build\intermediates\transforms\dex\debug\folders\1000\10\instant-run_0bbe0f2c2b555ddd137df622f74a354b63c4681e\classes.dex" />
     </item>
     <item
         is-multidex="true"
-        jar="/Users/tavoArgento/Library/Android/sdk/extras/android/m2repository/com/android/support/support-annotations/23.4.0/support-annotations-23.4.0.jar"
+        jar="C:\CentroCristalesAndroidApp\centrocristales-mobile\app\build\intermediates\exploded-aar\com.android.support\support-v4\23.4.0\jars\classes.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="23.0.3"
+        sha1="67bd36ee9340ec7c254108936ad16b24bed160cc">
+        <dex dex="C:\CentroCristalesAndroidApp\centrocristales-mobile\app\build\intermediates\transforms\dex\debug\folders\1000\10\com.android.support-support-v4-23.4.0_437bcbc824decb813a124f497d14a94e86b7ac3c\classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="C:\Users\Admin\.gradle\caches\modules-2\files-2.1\com.octo.android.robospice\robospice-cache\1.4.11\dbf991438c3abc4fc5003d085c281df4318142c7\robospice-cache-1.4.11.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="23.0.3"
+        sha1="dbf991438c3abc4fc5003d085c281df4318142c7">
+        <dex dex="C:\CentroCristalesAndroidApp\centrocristales-mobile\app\build\intermediates\transforms\dex\debug\folders\1000\10\robospice-cache-1.4.11_6ad9777ff4a867f792405a6b1fc14eda2dc283a6\classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="C:\CentroCristalesAndroidApp\centrocristales-mobile\app\build\intermediates\exploded-aar\com.android.support\appcompat-v7\23.4.0\jars\classes.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="23.0.3"
+        sha1="548f06de403a9409f00554b3ee12a9fdea0e236c">
+        <dex dex="C:\CentroCristalesAndroidApp\centrocristales-mobile\app\build\intermediates\transforms\dex\debug\folders\1000\10\com.android.support-appcompat-v7-23.4.0_63a08160453d69c343794c9ffd84bb65ec2148f1\classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="C:\Users\Admin\.gradle\caches\modules-2\files-2.1\com.squareup.picasso\picasso\2.5.2\7446d06ec8d4f7ffcc53f1da37c95f200dcb9387\picasso-2.5.2.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="23.0.3"
+        sha1="7446d06ec8d4f7ffcc53f1da37c95f200dcb9387">
+        <dex dex="C:\CentroCristalesAndroidApp\centrocristales-mobile\app\build\intermediates\transforms\dex\debug\folders\1000\10\picasso-2.5.2_22368cdf4e005ae56673dc222b14a85e132ad1b9\classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="C:\CentroCristalesAndroidApp\centrocristales-mobile\app\build\intermediates\exploded-aar\com.android.support\animated-vector-drawable\23.4.0\jars\classes.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="23.0.3"
+        sha1="de4db3785756bfb0915a9f59a9b3f2fea7407be4">
+        <dex dex="C:\CentroCristalesAndroidApp\centrocristales-mobile\app\build\intermediates\transforms\dex\debug\folders\1000\10\com.android.support-animated-vector-drawable-23.4.0_2a6f8fdd6279e96d45fff967a11d2907714f6a55\classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="C:\CentroCristalesAndroidApp\centrocristales-mobile\app\build\intermediates\exploded-aar\com.android.support\support-v4\23.4.0\jars\libs\internal_impl-23.4.0.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="23.0.3"
+        sha1="ea3c07504d2c8f4b13aa17c45c1b68ed9c1c3674">
+        <dex dex="C:\CentroCristalesAndroidApp\centrocristales-mobile\app\build\intermediates\transforms\dex\debug\folders\1000\10\internal_impl-23.4.0_d45cba82f8d182e2c8085b0c54726d4ce61c398e\classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="C:\Users\Admin\AppData\Local\Android\sdk\extras\android\m2repository\com\android\support\support-annotations\23.4.0\support-annotations-23.4.0.jar"
         jumboMode="true"
         optimize="true"
         revision="23.0.3"
         sha1="ffbe55fdb2bb456b1485831706a9eac3300bb6b8">
-        <dex dex="/Users/tavoArgento/Desktop/Centro Cristales /AndroidApp/centrocristales-mobile/app/build/intermediates/transforms/dex/debug/folders/1000/10/support-annotations-23.4.0_db54fb03988e68fb07fa33a43ec90d8238dfb802/classes.dex" />
+        <dex dex="C:\CentroCristalesAndroidApp\centrocristales-mobile\app\build\intermediates\transforms\dex\debug\folders\1000\10\support-annotations-23.4.0_ac9f6afd821389bb1e0800928c3d3a02c4b77f08\classes.dex" />
     </item>
     <item
         is-multidex="true"
-        jar="/Users/tavoArgento/.gradle/caches/modules-2/files-2.1/com.octo.android.robospice/robospice/1.4.11/94eebf99ae63d15c5f6edaeead9b58912dbe05ed/robospice-1.4.11.jar"
+        jar="C:\Program Files\Android\Android Studio\gradle\m2repository\com\google\code\gson\gson\2.2.4\gson-2.2.4.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="23.0.3"
+        sha1="a60a5e993c98c864010053cb901b7eab25306568">
+        <dex dex="C:\CentroCristalesAndroidApp\centrocristales-mobile\app\build\intermediates\transforms\dex\debug\folders\1000\10\gson-2.2.4_313aff129984a0a45e086871ec03bfcc02e7284e\classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="C:\Users\Admin\.gradle\caches\modules-2\files-2.1\com.octo.android.robospice\robospice\1.4.11\94eebf99ae63d15c5f6edaeead9b58912dbe05ed\robospice-1.4.11.jar"
         jumboMode="true"
         optimize="true"
         revision="23.0.3"
         sha1="94eebf99ae63d15c5f6edaeead9b58912dbe05ed">
-        <dex dex="/Users/tavoArgento/Desktop/Centro Cristales /AndroidApp/centrocristales-mobile/app/build/intermediates/transforms/dex/debug/folders/1000/10/robospice-1.4.11_860f0aad5e8dc3aa7e7fc25b42eda48a2f94b45d/classes.dex" />
+        <dex dex="C:\CentroCristalesAndroidApp\centrocristales-mobile\app\build\intermediates\transforms\dex\debug\folders\1000\10\robospice-1.4.11_3663ad902217729b468d2b2064aeb2b20979db03\classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="C:\CentroCristalesAndroidApp\centrocristales-mobile\app\build\intermediates\incremental-classes\debug\instant-run-bootstrap.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="23.0.3"
+        sha1="03ef042ccc9e442b24193f3a0a0b0e14da0a991d">
+        <dex dex="C:\CentroCristalesAndroidApp\centrocristales-mobile\app\build\intermediates\transforms\dex\debug\folders\1000\10\instant-run-bootstrap_57548df4c0cd1c9b426f66861cf613c788d9e520\classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="C:\Users\Admin\.gradle\caches\modules-2\files-2.1\com.octo.android.robospice\robospice-retrofit\1.4.11\803430962c6060571288fcb1d822f3f7c4de17f2\robospice-retrofit-1.4.11.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="23.0.3"
+        sha1="803430962c6060571288fcb1d822f3f7c4de17f2">
+        <dex dex="C:\CentroCristalesAndroidApp\centrocristales-mobile\app\build\intermediates\transforms\dex\debug\folders\1000\10\robospice-retrofit-1.4.11_7ecd5884c1a8dc2361f070396964107d643b6518\classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="C:\Users\Admin\.gradle\caches\modules-2\files-2.1\com.squareup.retrofit\retrofit\1.3.0\9c54af761b67b60a1be7a7a8e96c6235f136456b\retrofit-1.3.0.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="23.0.3"
+        sha1="9c54af761b67b60a1be7a7a8e96c6235f136456b">
+        <dex dex="C:\CentroCristalesAndroidApp\centrocristales-mobile\app\build\intermediates\transforms\dex\debug\folders\1000\10\retrofit-1.3.0_f8e725c640a874cda828599af706d1902abf7385\classes.dex" />
     </item>
 
 </items>
