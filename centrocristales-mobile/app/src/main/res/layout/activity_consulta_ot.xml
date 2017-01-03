@@ -1,92 +1,114 @@
 <?xml version="1.0" encoding="utf-8"?>
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:paddingBottom="@dimen/activity_vertical_margin"
-    android:paddingLeft="@dimen/activity_horizontal_margin"
-    android:paddingRight="@dimen/activity_horizontal_margin"
-    android:paddingTop="@dimen/activity_vertical_margin"
     tools:context="ar.com.lacomarcasistemas.centrocristalesmobile.ConsultaOtActivity">
 
     <LinearLayout
+        android:orientation="vertical"
+        android:paddingBottom="@dimen/activity_vertical_margin"
+        android:paddingLeft="@dimen/activity_horizontal_margin"
+        android:paddingRight="@dimen/activity_horizontal_margin"
+        android:paddingTop="@dimen/activity_vertical_margin"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:orientation="vertical">
+        android:background="@drawable/background_image"
+        android:layout_above="@+id/bannerStatus">
 
-        <TextView
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:textSize="@dimen/activity_title_textsize"
-            android:textAppearance="?android:attr/textAppearanceLarge"
-            android:text="@string/label_consulta_ot"
-            />
 
-        <TextView
+        <LinearLayout
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:textIsSelectable="false"
-            android:padding="@dimen/textview_activity_description_padding"
-            android:textColor="@color/textview_info_text"
-            android:textSize="@dimen/textview_info_textsize"
-            android:text="@string/label_copete_consulta_ot"/>
+            android:layout_height="match_parent"
+            android:orientation="vertical">
 
-        <EditText
-            android:id="@+id/txtOrdenTrabajo"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:textSize="@dimen/edittext_textsize"
-            android:hint="@string/hint_orden_trabajo"
-            android:inputType="number"
-            android:maxLines="1"
-            />
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:textSize="@dimen/activity_title_textsize"
+                android:textAppearance="?android:attr/textAppearanceLarge"
+                android:text="@string/label_consulta_ot"
+                />
 
-        <EditText
-            android:id="@+id/txtDominio"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:textSize="@dimen/edittext_textsize"
-            android:hint="@string/hint_dominio"
-            android:singleLine="true"
-            />
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:textIsSelectable="false"
+                android:padding="@dimen/textview_activity_description_padding"
+                android:textColor="@color/textview_info_text"
+                android:textSize="@dimen/textview_info_textsize"
+                android:text="@string/label_copete_consulta_ot"/>
 
-        <Button
-            android:layout_width="match_parent"
-            android:layout_height="@dimen/button_height"
-            android:textSize="@dimen/button_textsize"
-            android:text="@string/label_Consultar"
-            android:onClick="consultarOrdenTrabajo"
-            />
+            <EditText
+                android:id="@+id/txtOrdenTrabajo"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:textSize="@dimen/edittext_textsize"
+                android:hint="@string/hint_orden_trabajo"
+                android:inputType="number"
+                android:maxLines="1"
+                />
 
-        <TextView
-            android:id="@+id/txtStatus"
+            <EditText
+                android:id="@+id/txtDominio"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:textSize="@dimen/edittext_textsize"
+                android:hint="@string/hint_dominio"
+                />
+
+            <Button
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/button_height"
+                android:textSize="@dimen/button_textsize"
+                android:text="@string/label_Consultar"
+                android:onClick="consultarOrdenTrabajo"
+                />
+
+            <TextView
+                android:id="@+id/txtStatus"
+                android:layout_width="match_parent"
+                android:layout_height="0dp"
+                android:layout_weight="1"
+                android:textIsSelectable="true"
+                android:padding="@dimen/textview_info_padding"
+                android:textColor="@color/textview_info_text"
+                android:textSize="@dimen/textview_estado_ot_textsize"
+                android:gravity="center"
+                />
+
+        </LinearLayout>
+
+        <RelativeLayout
+            android:id="@+id/progressBarConsultaOt"
             android:layout_width="match_parent"
-            android:layout_height="0dp"
-            android:layout_weight="1"
-            android:textIsSelectable="true"
-            android:padding="@dimen/textview_info_padding"
-            android:textColor="@color/textview_info_text"
-            android:textSize="@dimen/textview_estado_ot_textsize"
-            android:gravity="center"
-            />
+            android:layout_height="match_parent"
+            android:visibility="gone"
+            android:clickable="true">
+
+            <ProgressBar
+                style="?android:attr/progressBarStyleLarge"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerHorizontal="true"
+                android:layout_centerVertical="true"
+                android:indeterminateDrawable="@drawable/progress" >
+            </ProgressBar>
+
+        </RelativeLayout>
 
     </LinearLayout>
 
-    <RelativeLayout
-        android:id="@+id/progressBarConsultaOt"
+    <ImageView
+        android:onClick="showWebsite"
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
+        android:layout_height="70dp"
+        android:scaleType="fitXY"
+        android:layout_alignParentBottom="true"
+        app:srcCompat="@android:drawable/arrow_down_float"
+        android:id="@id/bannerStatus"
         android:visibility="gone"
-        android:clickable="true">
+        android:contentDescription="@string/status_banner_ctntDesc"/>
 
-        <ProgressBar
-            style="?android:attr/progressBarStyleLarge"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_centerHorizontal="true"
-            android:layout_centerVertical="true"
-            android:indeterminateDrawable="@drawable/progress" >
-        </ProgressBar>
-
-    </RelativeLayout>
 </RelativeLayout>
