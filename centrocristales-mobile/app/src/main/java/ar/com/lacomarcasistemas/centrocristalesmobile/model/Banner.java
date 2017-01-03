@@ -30,20 +30,16 @@ public class Banner {
             @Override
             public void onBitmapLoaded(Bitmap bitmap, Picasso.LoadedFrom from) {
                 // Bitmap is loaded, use image here
-                System.out.println("it got in 1");
                 imageView.setImageBitmap(bitmap);
                 imageView.setVisibility(View.VISIBLE);
-                System.out.println("it succeeded");
             }
 
             @Override
             public void onBitmapFailed(Drawable errorDrawable) {
-                System.out.println("it didn t get in");
             }
 
             @Override
             public void onPrepareLoad(Drawable placeHolderDrawable) {
-
             }
 
         };

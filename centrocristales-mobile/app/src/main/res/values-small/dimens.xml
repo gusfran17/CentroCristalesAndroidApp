@@ -10,7 +10,7 @@
     <dimen name="home_button_textsize">10sp</dimen>
     <dimen name="home_frame_padding">10dp</dimen>
     <dimen name="textview_estado_ot_textsize">20sp</dimen>
-    <dimen name="edittext_textsize">16sp</dimen>
+    <dimen name="edittext_textsize">14sp</dimen>
     <dimen name="button_textsize">10sp</dimen>
     <dimen name="activity_title_textsize">18sp</dimen>
     <dimen name="button_height">35dp</dimen>
