@@ -15,4 +15,8 @@
     <dimen name="activity_title_textsize">24sp</dimen>
     <dimen name="button_height">60dp</dimen>
     <dimen name="home_copete_margin_bottom">50dp</dimen>
+    <dimen name="ancho_camara_button">150dp</dimen>
+    <dimen name="alto_camara_button">50dp</dimen>
+    <dimen name="side_padding_margin_buttons">4.0dip</dimen>
+    <dimen name="topbot_padding_margin_buttons">5.0dip</dimen>
 </resources>
